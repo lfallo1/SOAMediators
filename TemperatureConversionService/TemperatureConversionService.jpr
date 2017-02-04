@@ -160,6 +160,15 @@
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
+         <hash n="base_domain">
+            <value n="custom" v="false"/>
+            <value n="name" v="base_domain"/>
+            <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
+               <value n="promptForRemoteDebugging" v="false"/>
+               <value n="remoteProtocol" v="SOACommon"/>
+            </hash>
+            <url n="targetURL" path="servicebus.sboverview"/>
+         </hash>
          <hash n="Default">
             <value n="custom" v="false"/>
             <value n="name" v="Default"/>
@@ -170,6 +179,10 @@
             <url n="targetURL" path="servicebus.sboverview"/>
          </hash>
       </hash>
+      <list n="runConfigurationList">
+         <string v="Default"/>
+         <string v="base_domain"/>
+      </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectPaths">
       <url n="outputDirectory" path=".data/contentsets/classes/"/>
