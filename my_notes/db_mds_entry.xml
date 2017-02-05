@@ -1,0 +1,6 @@
+            <metadata-store class-name="oracle.mds.persistence.stores.db.DBMetadataStore">
+              <property value="DEV_MDS" name="jdbc-userid"/>
+              <property value="Raven$1996" name="jdbc-password"/>
+              <property value="jdbc:oracle:thin:@localhost:1521:XE" name="jdbc-url"/>
+              <property value="soa-infra" name="partition-name"/>
+            </metadata-store>
