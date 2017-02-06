@@ -15,9 +15,19 @@
           location="WSDLs/POFileAdapter.wsdl" importType="wsdl"/>
   <import namespace="http://oracle.com/sca/soapservice/SOABasicServices/FileAdapterExample/POWriteService_Client"
           location="WSDLs/POWriteService_Client.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter1"
+          location="WSDLs/PO_byCountry_FileAdapter1.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter2"
+          location="WSDLs/PO_byCountry_FileAdapter2.wsdl" importType="wsdl"/>
   <service name="POWriteService_Client" ui:wsdlLocation="WSDLs/POWriteService_Client.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/SOABasicServices/FileAdapterExample/POWriteService_Client#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://oracle.com/sca/soapservice/SOABasicServices/FileAdapterExample/POWriteService_Client#wsdl.endpoint(POWriteService_Client/execute_pt)">
+      <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
+    </binding.ws>
+  </service>
+  <service name="PO_byCountry_Client" ui:wsdlLocation="WSDLs/POFileAdapter.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.interface(Write_ptt)"/>
+    <binding.ws port="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.endpoint(PO_byCountry_Client/Write_pt)">
       <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
     </binding.ws>
   </service>
@@ -34,10 +44,34 @@
       </reference>
     </componentType>
   </component>
+  <component name="PO_byCountry_Mediator">
+    <implementation.mediator src="Mediators/PO_byCountry_Mediator.mplan"/>
+    <componentType>
+      <service name="PO_byCountry_Mediator" ui:wsdlLocation="WSDLs/POFileAdapter.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.interface(Write_ptt)"/>
+      </service>
+      <reference name="PO_byCountry_FileAdapter1" ui:wsdlLocation="WSDLs/PO_byCountry_FileAdapter1.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter1#wsdl.interface(Write_ptt)"/>
+      </reference>
+      <reference name="PO_byCountry_FileAdapter2" ui:wsdlLocation="WSDLs/PO_byCountry_FileAdapter2.wsdl">
+        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter2#wsdl.interface(Write_ptt)"/>
+      </reference>
+    </componentType>
+  </component>
   <reference name="POFileAdapter" ui:wsdlLocation="WSDLs/POFileAdapter.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.interface(Write_ptt)"/>
     <binding.jca config="Adapters/POFileAdapter_file.jca"/>
     <property name="po_filedir" type="xs:string" many="false" override="may"></property>
+  </reference>
+  <reference name="PO_byCountry_FileAdapter1" ui:wsdlLocation="WSDLs/PO_byCountry_FileAdapter1.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter1#wsdl.interface(Write_ptt)"/>
+    <binding.jca config="Adapters/PO_byCountry_FileAdapter1_file.jca"/>
+    <property name="country_filelocation_1" type="xs:string" many="false" override="may"></property>
+  </reference>
+  <reference name="PO_byCountry_FileAdapter2" ui:wsdlLocation="WSDLs/PO_byCountry_FileAdapter2.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter2#wsdl.interface(Write_ptt)"/>
+    <binding.jca config="Adapters/PO_byCountry_FileAdapter2_file.jca"/>
+    <property name="country_filelocation_2" type="xs:string" many="false" override="may"></property>
   </reference>
   <wire>
     <source.uri>POWriteService_Client</source.uri>
@@ -46,5 +80,17 @@
   <wire>
     <source.uri>PO_Mediator/POFileAdapter</source.uri>
     <target.uri>POFileAdapter</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PO_byCountry_Client</source.uri>
+    <target.uri>PO_byCountry_Mediator/PO_byCountry_Mediator</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PO_byCountry_Mediator/PO_byCountry_FileAdapter1</source.uri>
+    <target.uri>PO_byCountry_FileAdapter1</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PO_byCountry_Mediator/PO_byCountry_FileAdapter2</source.uri>
+    <target.uri>PO_byCountry_FileAdapter2</target.uri>
   </wire>
 </composite>

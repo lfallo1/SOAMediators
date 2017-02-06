@@ -28,6 +28,17 @@
             </property>
          </binding>
       </service>
+      <service name="PO_byCountry_Client">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.endpoint(PO_byCountry_Client/Write_pt)</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>NEVER</replace>
+            </property>
+         </binding>
+      </service>
       <property name="productVersion">
          <replace>12.2.1.2.0.161003</replace>
       </property>
@@ -58,6 +69,18 @@
          </property>
          <binding type="jca"/>
       </reference>
+      <reference name="PO_byCountry_FileAdapter1">
+         <property name="country_filelocation_1">
+            <replace>C:\Users\lfallo1\Documents\oracle\dummy_files\WriteServiceByCountry1</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+      <reference name="PO_byCountry_FileAdapter2">
+         <property name="country_filelocation_2">
+            <replace>C:\Users\lfallo1\Documents\oracle\dummy_files\WriteServiceByCountry2</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
    </composite>
    <!--To configure monitor.config: 
 	<property name="enabled"><replace>true</replace></property>
@@ -79,7 +102,7 @@
 		<replace>8889</replace>
 	<searchReplace>
 	-->
-   <wsdlAndSchema name="Adapters/POFileAdapter_file.jca|WSDLs/POFileAdapter.wsdl|WSDLs/POWriteService_Client.wsdl">
+   <wsdlAndSchema name="Adapters/POFileAdapter_file.jca|Adapters/PO_byCountry_FileAdapter1_file.jca|Adapters/PO_byCountry_FileAdapter2_file.jca|WSDLs/POFileAdapter.wsdl|WSDLs/POWriteService_Client.wsdl|WSDLs/PO_byCountry_FileAdapter1.wsdl|WSDLs/PO_byCountry_FileAdapter2.wsdl">
       <searchReplace>
          <search/>
          <replace/>
