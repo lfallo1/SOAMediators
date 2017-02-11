@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ns0:Root-Element xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter" xmlns:pc="http://xmlns.oracle.com/pcbpel/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:ns0="http://TargetNamespace.com/ProcessOrderFile">
+   <ns0:order>
+      <ns0:Customer>
+         <ns0:FName>FName4</ns0:FName>
+         <ns0:LName>LName5</ns0:LName>
+         <ns0:CCNumber>CCNumber6</ns0:CCNumber>
+         <ns0:CCDate>CCDate7</ns0:CCDate>
+         <ns0:CCCode>8</ns0:CCCode>
+      </ns0:Customer>
+      <ns0:LineItems>
+         <ns0:LineItemID>9</ns0:LineItemID>
+         <ns0:ProductName>ProductName10</ns0:ProductName>
+         <ns0:Price>11</ns0:Price>
+         <ns0:Quantity>12</ns0:Quantity>
+      </ns0:LineItems>
+      <ns0:LineItems>
+         <ns0:LineItemID>13</ns0:LineItemID>
+         <ns0:ProductName>ProductName14</ns0:ProductName>
+         <ns0:Price>15</ns0:Price>
+         <ns0:Quantity>16</ns0:Quantity>
+      </ns0:LineItems>
+      <ns0:LineItems>
+         <ns0:LineItemID>17</ns0:LineItemID>
+         <ns0:ProductName>ProductName18</ns0:ProductName>
+         <ns0:Price>19</ns0:Price>
+         <ns0:Quantity>20</ns0:Quantity>
+      </ns0:LineItems>
+   </ns0:order>
+</ns0:Root-Element>

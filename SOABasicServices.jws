@@ -28,6 +28,7 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="FileAdapterExample/FileAdapterExample.jpr"/></hash>
+      <hash><url n="URL" path="HelloWorldFileAdapter/HelloWorldFileAdapter.jpr"/></hash>
       <hash><url n="URL" path="HelloWorldSoa/HelloWorldSoa.jpr"/></hash>
       <hash><url n="URL" path="SharedArtificats/SharedArtificats.jpr"/></hash>
       <hash><url n="URL" path="TemperatureConversionService/TemperatureConversionService.jpr"/></hash>

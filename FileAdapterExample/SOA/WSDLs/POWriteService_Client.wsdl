@@ -8,7 +8,8 @@
     >
     <wsdl:types>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="http://www.example.org" schemaLocation="oramds:/apps/POSchema.xsd"/>
+            <!--<xsd:import namespace="http://www.example.org" schemaLocation="oramds:/apps/POSchema.xsd"/>-->
+            <import namespace="http://www.example.org" schemaLocation="../Schemas/POSchema.xsd" />
         </xsd:schema>
     </wsdl:types>
     <wsdl:message name="requestMessage">

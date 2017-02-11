@@ -29,11 +29,11 @@
         </dgm:operations>
     </dgm:gService>
     <dgm:gReference name="POFileAdapter">
-        <dgm:body borderWidth="2" arcRad="20" X="473" Y="260" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="826" Y="260" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="463" Y="253" width="156" height="98">
+        <dgm:shadow arcRad="20" X="816" Y="253" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="POFileAdapter" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.interface(Write_ptt)"/>
@@ -43,11 +43,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="PO_byCountry_FileAdapter1">
-        <dgm:body borderWidth="2" arcRad="20" X="473" Y="26" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="826" Y="26" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="463" Y="19" width="156" height="98">
+        <dgm:shadow arcRad="20" X="816" Y="19" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="PO_byCountry_FileAdapter1" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter1#wsdl.interface(Write_ptt)"/>
@@ -57,11 +57,11 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gReference name="PO_byCountry_FileAdapter2">
-        <dgm:body borderWidth="2" arcRad="20" X="473" Y="144" width="136" height="84">
+        <dgm:body borderWidth="2" arcRad="20" X="826" Y="144" width="136" height="84">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="463" Y="137" width="156" height="98">
+        <dgm:shadow arcRad="20" X="816" Y="137" width="156" height="98">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="PO_byCountry_FileAdapter2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter2#wsdl.interface(Write_ptt)"/>
@@ -71,12 +71,12 @@
         </dgm:operations>
     </dgm:gReference>
     <dgm:gComponent name="PO_Mediator">
-        <dgm:body borderWidth="2" arcRad="20" X="274" Y="245" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="245" width="130" height="61">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="264" Y="238" width="150" height="77">
+        <dgm:shadow arcRad="20" X="500" Y="238" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="PO_Mediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://oracle.com/sca/soapservice/SOABasicServices/FileAdapterExample/POWriteService_Client#wsdl.interface(execute_ptt)"/>
@@ -84,12 +84,12 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gComponent name="PO_byCountry_Mediator">
-        <dgm:body borderWidth="2" arcRad="20" X="274" Y="84" width="130" height="86">
+        <dgm:body borderWidth="2" arcRad="20" X="510" Y="84" width="130" height="86">
             <dgm:borderColor r="128" g="92" b="148"/>
             <dgm:lightBgColor r="208" g="169" b="227"/>
             <dgm:darkBgColor r="183" g="132" b="212"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="264" Y="77" width="150" height="102">
+        <dgm:shadow arcRad="20" X="500" Y="77" width="150" height="102">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="PO_byCountry_Mediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter#wsdl.interface(Write_ptt)"/>
@@ -98,31 +98,31 @@
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="POWriteService_Client" target="PO_Mediator/PO_Mediator" width="2">
-        <dgm:gSegment X1="168" Y1="270" X2="264" Y2="270"/>
+        <dgm:gSegment X1="168" Y1="270" X2="500" Y2="270"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PO_Mediator/POFileAdapter" target="POFileAdapter" width="2">
-        <dgm:gSegment X1="414" Y1="270" X2="463" Y2="270"/>
+        <dgm:gSegment X1="650" Y1="270" X2="816" Y2="270"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PO_byCountry_Client" target="PO_byCountry_Mediator/PO_byCountry_Mediator" width="2">
-        <dgm:gSegment X1="168" Y1="109" X2="264" Y2="109"/>
+        <dgm:gSegment X1="168" Y1="109" X2="500" Y2="109"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PO_byCountry_Mediator/PO_byCountry_FileAdapter1" target="PO_byCountry_FileAdapter1" width="2">
-        <dgm:gSegment X1="414" Y1="109" X2="439" Y2="109"/>
-        <dgm:gSegment X1="439" Y1="109" X2="439" Y2="36"/>
-        <dgm:gSegment X1="439" Y1="36" X2="463" Y2="36"/>
+        <dgm:gSegment X1="650" Y1="109" X2="674" Y2="109"/>
+        <dgm:gSegment X1="674" Y1="109" X2="674" Y2="36"/>
+        <dgm:gSegment X1="674" Y1="36" X2="816" Y2="36"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="PO_byCountry_Mediator/PO_byCountry_FileAdapter2" target="PO_byCountry_FileAdapter2" width="2">
-        <dgm:gSegment X1="414" Y1="134" X2="439" Y2="134"/>
-        <dgm:gSegment X1="439" Y1="134" X2="439" Y2="154"/>
-        <dgm:gSegment X1="439" Y1="154" X2="463" Y2="154"/>
+        <dgm:gSegment X1="650" Y1="134" X2="674" Y2="134"/>
+        <dgm:gSegment X1="674" Y1="134" X2="674" Y2="154"/>
+        <dgm:gSegment X1="674" Y1="154" X2="816" Y2="154"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

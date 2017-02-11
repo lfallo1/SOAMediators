@@ -15,7 +15,9 @@
     <wsdl:types>
       <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/PO_byCountry_FileAdapter1"
               xmlns="http://www.w3.org/2001/XMLSchema" >
-        <import namespace="http://www.example.org" schemaLocation="oramds:/apps/POSchema.xsd" />
+        <!--<import namespace="http://www.example.org" schemaLocation="oramds:/apps/POSchema.xsd" />-->
+        <import namespace="http://www.example.org" schemaLocation="../Schemas/POSchema.xsd" />
+
       </schema>
     </wsdl:types>
     <wsdl:message name="Write_msg">

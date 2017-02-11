@@ -1,11 +1,11 @@
 <wsdl:definitions
-     name="POFileAdapter"
-     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter"
-     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter"
+     name="WriteOrderAdapter"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter"
      xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
      xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-     xmlns:imp1="http://www.example.org"
+     xmlns:imp1="http://TargetNamespace.com/ProcessOrderFile"
     >
   <plt:partnerLinkType name="Write_plt" >
     <plt:role name="Write_role" >
@@ -13,14 +13,13 @@
     </plt:role>
   </plt:partnerLinkType>
     <wsdl:types>
-      <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileAdapterExample/POFileAdapter"
+      <schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter"
               xmlns="http://www.w3.org/2001/XMLSchema" >
-        <!--<import namespace="http://www.example.org" schemaLocation="oramds:/apps/POSchema.xsd" />-->
-        <import namespace="http://www.example.org" schemaLocation="../Schemas/POSchema.xsd" />
+        <import namespace="http://TargetNamespace.com/ProcessOrderFile" schemaLocation="../Schemas/nxsd_schema1.xsd" />
       </schema>
     </wsdl:types>
     <wsdl:message name="Write_msg">
-        <wsdl:part name="body" element="imp1:FileFormatObject"/>
+        <wsdl:part name="body" element="imp1:OrderSummary"/>
     </wsdl:message>
     <wsdl:portType name="Write_ptt">
         <wsdl:operation name="Write">

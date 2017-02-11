@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="WriteBadgeData">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="230" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="223" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="WriteBadgeData" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://oracle.com/sca/soapservice/SOABasicServices/HelloWorldFileAdapter/SOAPService#wsdl.interface(execute_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>execute</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gService name="ProcessOrderFile">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="41" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="34" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="ProcessOrderFile" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile#wsdl.interface(Read_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/file_adapter_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Read</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="fileReference">
+        <dgm:body borderWidth="2" arcRad="20" X="793" Y="157" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="783" Y="150" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="fileReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference#wsdl.interface(Write_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/file_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Write</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="fileReference_2">
+        <dgm:body borderWidth="2" arcRad="20" X="793" Y="275" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="783" Y="268" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="fileReference_2" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference_2#wsdl.interface(Write_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/file_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Write</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="WriteOrderAdapter">
+        <dgm:body borderWidth="2" arcRad="20" X="793" Y="41" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="783" Y="34" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="WriteOrderAdapter" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter#wsdl.interface(Write_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/file_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Write</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="BadgeMediator">
+        <dgm:body borderWidth="2" arcRad="20" X="488" Y="215" width="130" height="86">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="478" Y="208" width="150" height="102">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BadgeMediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://oracle.com/sca/soapservice/SOABasicServices/HelloWorldFileAdapter/SOAPService#wsdl.interface(execute_ptt)"/>
+        <dgm:outputPort name="fileReference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference#wsdl.interface(Write_ptt)"/>
+        <dgm:outputPort name="fileReference_2" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference_2#wsdl.interface(Write_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="OrderRecordMediator">
+        <dgm:body borderWidth="2" arcRad="20" X="488" Y="26" width="130" height="61">
+            <dgm:borderColor r="128" g="92" b="148"/>
+            <dgm:lightBgColor r="208" g="169" b="227"/>
+            <dgm:darkBgColor r="183" g="132" b="212"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="478" Y="19" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="OrderRecordMediator" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile#wsdl.interface(Read_ptt)"/>
+        <dgm:outputPort name="WriteOrderAdapter" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter#wsdl.interface(Write_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/mediator/resource/image/mediator_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="WriteBadgeData" target="BadgeMediator/BadgeMediator" width="2">
+        <dgm:gSegment X1="168" Y1="240" X2="478" Y2="240"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BadgeMediator/fileReference" target="fileReference" width="2">
+        <dgm:gSegment X1="628" Y1="240" X2="652" Y2="240"/>
+        <dgm:gSegment X1="652" Y1="240" X2="652" Y2="167"/>
+        <dgm:gSegment X1="652" Y1="167" X2="783" Y2="167"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="BadgeMediator/fileReference_2" target="fileReference_2" width="2">
+        <dgm:gSegment X1="628" Y1="265" X2="652" Y2="265"/>
+        <dgm:gSegment X1="652" Y1="265" X2="652" Y2="285"/>
+        <dgm:gSegment X1="652" Y1="285" X2="783" Y2="285"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ProcessOrderFile" target="OrderRecordMediator/OrderRecordMediator" width="2">
+        <dgm:gSegment X1="168" Y1="51" X2="478" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="OrderRecordMediator/WriteOrderAdapter" target="WriteOrderAdapter" width="2">
+        <dgm:gSegment X1="628" Y1="51" X2="783" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:nxsd="http://xmlns.oracle.com/pcbpel/nxsd"
+            xmlns:tns="http://TargetNamespace.com/ProcessOrderFile"
+            targetNamespace="http://TargetNamespace.com/ProcessOrderFile"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+
+            nxsd:version="NXSD"
+            nxsd:stream="chars"
+            nxsd:encoding="US-ASCII"
+>
+
+
+  <xsd:element name="Root-Element">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="order" type="tns:OrderRecord" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:complexType name="OrderRecord">
+    <xsd:sequence>
+      <xsd:element name="Customer" type="tns:Customer" />
+      <xsd:element name="LineItems" type="tns:LineItem" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="Customer">
+    <xsd:sequence>
+      <xsd:element name="FName" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="," />
+      <xsd:element name="LName" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="," />
+      <xsd:element name="CCNumber" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="," />
+      <xsd:element name="CCDate" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy="," />
+      <xsd:element name="CCCode" type="xsd:int" nxsd:style="terminated" nxsd:terminatedBy="${eol}" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="LineItem">
+    <xsd:sequence>
+      <xsd:element name="LineItemID" type="xsd:int" nxsd:style="terminated" nxsd:terminatedBy=";" />
+      <xsd:element name="ProductName" type="xsd:string" nxsd:style="terminated" nxsd:terminatedBy=";" />
+      <xsd:element name="Price" type="xsd:decimal" nxsd:style="terminated" nxsd:terminatedBy=";" />
+      <xsd:element name="Quantity" type="xsd:int" nxsd:style="terminated" nxsd:terminatedBy="${eol}" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="OrderSummary">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Customer" type="xsd:string"/>
+        <xsd:element name="Total" type="xsd:decimal"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
