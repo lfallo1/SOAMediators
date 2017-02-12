@@ -49,12 +49,4 @@
       <xsd:element name="Quantity" type="xsd:int" nxsd:style="terminated" nxsd:terminatedBy="${eol}" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="OrderSummary">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="Customer" type="xsd:string"/>
-        <xsd:element name="Total" type="xsd:decimal"/>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
 </xsd:schema>

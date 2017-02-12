@@ -1,12 +1,12 @@
 <wsdl:definitions
-     name="ProcessOrderFile"
-     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile"
-     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile"
+     name="fileService"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileReader/fileService"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/FileReader/fileService"
      xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
      xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
      xmlns:pc="http://xmlns.oracle.com/pcbpel/"
+     xmlns:imp1="http://TargetNamespace.com/fileService"
      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-     xmlns:imp1="http://TargetNamespace.com/ProcessOrderFile"
     >
   <plt:partnerLinkType name="Read_plt" >
     <plt:role name="Read_role" >
@@ -15,11 +15,11 @@
   </plt:partnerLinkType>
     <wsdl:types>
       <schema xmlns="http://www.w3.org/2001/XMLSchema" >
-        <import namespace="http://TargetNamespace.com/ProcessOrderFile" schemaLocation="../Schemas/nxsd_schema1.xsd" />
+        <import namespace="http://TargetNamespace.com/fileService" schemaLocation="../Schemas/nxsd_schema1.xsd" />
       </schema>
     </wsdl:types>
     <wsdl:message name="Read_msg">
-        <wsdl:part name="body" element="imp1:Root-Element"/>
+        <wsdl:part name="body" element="imp1:Superhero"/>
     </wsdl:message>
     <wsdl:portType name="Read_ptt">
         <wsdl:operation name="Read">

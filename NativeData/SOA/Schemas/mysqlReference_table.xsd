@@ -1,0 +1,40 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/mysqlReference" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/mysqlReference" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="ChannelCollection" type="ChannelCollection"/>
+   <xs:complexType name="ChannelCollection">
+      <xs:sequence>
+         <xs:element name="Channel" type="Channel" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Channel">
+      <xs:sequence>
+         <xs:element name="ChannelID" type="xs:int" nillable="true"/>
+         <xs:element name="Name" type="xs:string" minOccurs="0" nillable="true"/>
+         <xs:element name="Description" type="string255" minOccurs="0" nillable="true"/>
+         <xs:element name="StationID" type="xs:int" minOccurs="0"/>
+         <xs:element name="LanguageID" type="xs:int" minOccurs="0"/>
+         <xs:element name="OnAir" type="xs:time" minOccurs="0"/>
+         <xs:element name="DeleteDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="CreatedBy" type="string200" minOccurs="0"/>
+         <xs:element name="CreateDate" type="xs:dateTime" minOccurs="0"/>
+         <xs:element name="LastUpdatedBy" type="string200" minOccurs="0" nillable="true"/>
+         <xs:element name="LastUpdateDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="mysqlReferenceSelect_ChannelIDInputParameters" type="mysqlReferenceSelect_ChannelID"/>
+   <xs:complexType name="mysqlReferenceSelect_ChannelID">
+      <xs:sequence>
+         <xs:element name="ChannelID" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string255">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="255"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="string200">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="200"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

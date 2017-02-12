@@ -17,21 +17,11 @@
           location="WSDLs/fileReference.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference_2"
           location="WSDLs/fileReference_2.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile"
-          location="WSDLs/ProcessOrderFile.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter"
-          location="WSDLs/WriteOrderAdapter.wsdl" importType="wsdl"/>
   <service name="WriteBadgeData" ui:wsdlLocation="WSDLs/SOAPService.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/SOABasicServices/HelloWorldFileAdapter/SOAPService#wsdl.interface(execute_ptt)"/>
     <binding.ws port="http://oracle.com/sca/soapservice/SOABasicServices/HelloWorldFileAdapter/SOAPService#wsdl.endpoint(SOAPService/execute_pt)">
       <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">NEVER</property>
     </binding.ws>
-  </service>
-  <service name="ProcessOrderFile" ui:wsdlLocation="WSDLs/ProcessOrderFile.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile#wsdl.interface(Read_ptt)"/>
-    <binding.jca config="Adapters/ProcessOrderFile_file.jca">
-      <property name="useRejectedMessageRecovery" type="xs:string" many="false" override="may">true</property>
-    </binding.jca>
   </service>
   <property name="productVersion" type="xs:string" many="false">12.2.1.2.0.161003</property>
   <property name="compositeID" type="xs:string" many="false">caee050b-c8f2-4070-ae54-cd9bcc70a35f</property>
@@ -49,17 +39,6 @@
       </reference>
     </componentType>
   </component>
-  <component name="OrderRecordMediator">
-    <implementation.mediator src="Mediators/OrderRecordMediator.mplan"/>
-    <componentType>
-      <service name="OrderRecordMediator" ui:wsdlLocation="WSDLs/ProcessOrderFile.wsdl">
-        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/ProcessOrderFile#wsdl.interface(Read_ptt)"/>
-      </service>
-      <reference name="WriteOrderAdapter" ui:wsdlLocation="WSDLs/WriteOrderAdapter.wsdl">
-        <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter#wsdl.interface(Write_ptt)"/>
-      </reference>
-    </componentType>
-  </component>
   <reference name="fileReference" ui:wsdlLocation="WSDLs/fileReference.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference#wsdl.interface(Write_ptt)"/>
     <binding.jca config="Adapters/fileReference_file.jca"/>
@@ -69,10 +48,6 @@
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/fileReference_2#wsdl.interface(Write_ptt)"/>
     <binding.jca config="Adapters/fileReference_2_file.jca"/>
     <property name="PrimaryFolder" type="xs:string" many="false" override="may">C:\Users\lfallo1\Documents\oracle\dummy_files\POWriteServiceFiles</property>
-  </reference>
-  <reference name="WriteOrderAdapter" ui:wsdlLocation="WSDLs/WriteOrderAdapter.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/SOABasicServices/HelloWorldFileAdapter/WriteOrderAdapter#wsdl.interface(Write_ptt)"/>
-    <binding.jca config="Adapters/WriteOrderAdapter_file.jca"/>
   </reference>
   <wire>
     <source.uri>WriteBadgeData</source.uri>
@@ -85,13 +60,5 @@
   <wire>
     <source.uri>BadgeMediator/fileReference_2</source.uri>
     <target.uri>fileReference_2</target.uri>
-  </wire>
-  <wire>
-    <source.uri>ProcessOrderFile</source.uri>
-    <target.uri>OrderRecordMediator/OrderRecordMediator</target.uri>
-  </wire>
-  <wire>
-    <source.uri>OrderRecordMediator/WriteOrderAdapter</source.uri>
-    <target.uri>WriteOrderAdapter</target.uri>
   </wire>
 </composite>

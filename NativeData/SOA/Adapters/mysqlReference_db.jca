@@ -1,0 +1,14 @@
+<adapter-config name="mysqlReference" adapter="db" wsdlLocation="../WSDLs/mysqlReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="Connection1" location="eis/DB/CONNECTION1"/>
+  <endpoint-interaction portType="mysqlReference_ptt" operation="mysqlReferenceSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="mysqlReference.Channel"/>
+      <property name="QueryName" value="mysqlReferenceSelect"/>
+      <property name="MappingsMetaDataURL" value="mysqlReference-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

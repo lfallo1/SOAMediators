@@ -1,4 +1,4 @@
-<adapter-config name="WriteOrderAdapter" adapter="file" wsdlLocation="../WSDLs/WriteOrderAdapter.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+<adapter-config name="fileReference" adapter="file" wsdlLocation="../WSDLs/fileReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
   
   <connection-factory location="eis/FileAdapter"/>
   <endpoint-interaction portType="Write_ptt" operation="Write">
@@ -6,7 +6,7 @@
       <property name="PhysicalDirectory" value="C:\Users\lfallo1\Documents\oracle\OracleEDU\project_files\output"/>
       <property name="NumberMessages" value="1"/>
       <property name="Append" value="false"/>
-      <property name="FileNamingConvention" value="product_order_%SEQ%.xml"/>
+      <property name="FileNamingConvention" value="superhero_out_%SEQ%.xml"/>
     </interaction-spec>
   </endpoint-interaction>
 
